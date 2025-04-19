@@ -1,0 +1,8 @@
+{
+  "name": "Webflow React Example",
+  "apiVersion": "2",
+  "size": "large",
+  "publicDir": "dist",
+  "appIntents": {},
+  "appConnections": []
+}
