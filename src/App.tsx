@@ -11,7 +11,12 @@ function App() {
   useEffect(() => {
     const fetchClasses = async () => {
       try {
-        const styleManager = await webflow.getStyleManager()
+        // Check if webflow object exists and is accessible
+        if (typeof window.webflow === 'undefined') {
+          throw new Error('This app must be run inside the Webflow Designer.')
+        }
+        
+        const styleManager = await window.webflow.getStyleManager()
         const allClasses = await styleManager.getAllClasses()
         setClasses(allClasses)
         setError(null)
